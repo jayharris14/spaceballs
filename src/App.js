@@ -6719,8 +6719,8 @@ function GetScore(){
   let value=document.getElementById("user").value;
   console.log(value);
   console.log(finalscore);
-  console.log('http://http://spring-demo-env.eba-2zgumj92.us-east-1.elasticbeanstalk.com/score/' +finalscore+'/'+ value);
-  fetch('http://http://spring-demo-env.eba-2zgumj92.us-east-1.elasticbeanstalk.com/score/' +finalscore+'/'+ value, {
+  console.log('http://spring-demo-env.eba-2zgumj92.us-east-1.elasticbeanstalk.com/score/' +finalscore+'/'+ value);
+  fetch('http://spring-demo-env.eba-2zgumj92.us-east-1.elasticbeanstalk.com/score/' +finalscore+'/'+ value, {
     method: 'POST',
     body: JSON.stringify({
       // Add parameters here
@@ -6747,7 +6747,7 @@ function App() {
   const [topscores, setTopscores]=useState([]);
   var scores=[];
   useEffect(() => {
-    fetch('http://http://spring-demo-env.eba-2zgumj92.us-east-1.elasticbeanstalk.com/scores', {
+    fetch('http://spring-demo-env.eba-2zgumj92.us-east-1.elasticbeanstalk.com/scores', {
       "Access-Control-Allow-Origin": "https://localhost:3000"
     })
     .then((res) => res.json())
