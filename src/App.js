@@ -6747,7 +6747,7 @@ function App() {
   const [topscores, setTopscores]=useState([]);
   var scores=[];
   useEffect(() => {
-    fetch('https://spaceballs.us-east-2.elasticbeanstalk.com//scores', {
+    fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/scores', {
       "Access-Control-Allow-Origin": "https://localhost:3000"
     })
     .then((res) => res.json())
