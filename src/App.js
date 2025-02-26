@@ -209,6 +209,10 @@ function HighScores(){
           sortednames.splice(j,0, scorenames.at(i));
           stop="yes";
         }
+        if (sortedscores.at(j)!=max && j==(sortedscores.length-1)){
+          sortedscores.push(ascores.at(i));
+          sortednames.push(scorenames.at(i));
+        }
       }
     }
     else{
@@ -223,7 +227,7 @@ function HighScores(){
   }
   console.log(sortednames);
   console.log(sortedscores);
-  for (let i=0; i<5; i++){
+  for (let i=0; i<sortedscores.length; i++){
     names5.push(sortednames.at(i));
     scores5.push(sortedscores.at(i));
   }
