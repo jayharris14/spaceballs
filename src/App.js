@@ -227,20 +227,16 @@ function HighScores(){
   }
   console.log(sortednames);
   console.log(sortedscores);
-  for (let i=0; i<5 i++){
-    if (names5.at(i)==null){
-      names5.push('-');
-    }
-    else{
+  for (let i=0; i<sortednames.length; i++){
     names5.push(sortednames.at(i));
-    }
-     if (scores5.at(i)==null){
-    scores5.push('-');
-     }
-    else{
     scores5.push(sortedscores.at(i));
     }
+    if (names5.length<5){
+  for (let i=names5.length; i<5; i++){
+   names5.push("-");
+  scores5.push("-");
   }
+    }
     console.log(names5);
     console.log(scores5);
     document.getElementById("ihighscorenames").innerHTML=names5.at(0)+ "<br />" + names5.at(1)+ "<br />"+ names5.at(2)+ "<br />"+ names5.at(3)+ "<br />"+ names5.at(4);
