@@ -227,9 +227,19 @@ function HighScores(){
   }
   console.log(sortednames);
   console.log(sortedscores);
-  for (let i=0; i<sortedscores.length; i++){
+  for (let i=0; i<5 i++){
+    if (names5.at(i)==null){
+      names5.push('-');
+    }
+    else{
     names5.push(sortednames.at(i));
+    }
+     if (scores5.at(i)==null){
+    scores5.push('-');
+     }
+    else{
     scores5.push(sortedscores.at(i));
+    }
   }
     console.log(names5);
     console.log(scores5);
