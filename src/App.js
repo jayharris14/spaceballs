@@ -6747,8 +6747,7 @@ function App() {
   const [topscores, setTopscores]=useState([]);
   var scores=[];
   useEffect(() => {
-    fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/scores',
-    })
+    fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/scores')
     .then((res) => res.json())
     .then((data)=>setTopscores(data));
 }, []);
