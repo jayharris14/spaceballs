@@ -6722,7 +6722,6 @@ function GetScore(){
   console.log('https://spaceballs.us-east-2.elasticbeanstalk.com/score/' +finalscore+'/'+ value);
   fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/score/' +finalscore+'/'+ value, {
     method: 'POST',
-    mode: 'no-cors',
     body: JSON.stringify({
       // Add parameters here
     }),
@@ -6749,8 +6748,7 @@ function App() {
   const [topscores, setTopscores]=useState([]);
   var scores=[];
   useEffect(() => {
-    fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/scores', {
-      mode: 'no-cors',
+    fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/scores', 
       "Access-Control-Allow-Origin": '*'
     })
     .then((res) => res.json())
