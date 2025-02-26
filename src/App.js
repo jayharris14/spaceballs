@@ -209,7 +209,7 @@ function HighScores(){
           sortednames.splice(j,0, scorenames.at(i));
           stop="yes";
         }
-        if (sortedscores.at(j)!=max && j==(sortedscores.length-1)){
+        if (sortedscores.at(j)==max && j==(sortedscores.length-1)){
           sortedscores.push(ascores.at(i));
           sortednames.push(scorenames.at(i));
         }
