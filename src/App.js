@@ -6729,7 +6729,7 @@ function GetScore(){
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
        
-        'Access-Control-Allow-Origin': '*'
+        "Access-Control-Allow-Origin": '*'
     },
   })
      .then((response) => response.json())
@@ -6751,7 +6751,7 @@ function App() {
   var scores=[];
   useEffect(() => {
     fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/scores', 
-      'Access-Control-Allow-Origin': '*'
+      "Access-Control-Allow-Origin": '*'
     })
     .then((res) => res.json())
     .then((data)=>setTopscores(data));
