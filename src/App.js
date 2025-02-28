@@ -226,7 +226,7 @@ function HighScores(){
         if (ascores.at(i)>sortedscores.at(k)){
           sortedscores.splice(k, 0, ascores.at(i));
           sortednames.splice(k,0, scorenames.at(i));
-          added="yes;
+          added="yes";
         }
         if (k==ecompare && added=="no"){
            sortedscores.push(ascores.at(i));
