@@ -203,13 +203,13 @@ function HighScores(){
     }
     else if(ascores.at(i)==max){
       var stop="no";
+        var icompare=sortedscores.length-1;
       for (let j=0; j<sortedscores.length; j++){
         if (sortedscores.at(j)!=max && stop!="yes"){
           sortedscores.splice(j, 0, ascores.at(i));
           sortednames.splice(j,0, scorenames.at(i));
           stop="yes";
         }
-        var icompare=sortedscores.length-1;
         if (sortedscores.at(j)==max && j==icompare){
           sortedscores.push(ascores.at(i));
           sortednames.push(scorenames.at(i));
