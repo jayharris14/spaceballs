@@ -6777,7 +6777,7 @@ function GetScore(){
         console.log(err.message);
      });
      document.getElementById("isubmit").style.zIndex=-3;
-     document.getElementById("user").innerHTML="";
+     document.getElementById("user").value="";
   scorenames.push(value);
   ascores.push(finalscore);
    UpdateScores();
