@@ -204,7 +204,8 @@ function HighScores(){
     else if(ascores.at(i)==max){
       var stop="no";
         var icompare=sortedscores.length-1;
-      for (let j=0; j<sortedscores.length; j++){
+      var ilength=sortedscores.length;
+      for (let j=0; j<ilength; j++){
         if (sortedscores.at(j)!=max && stop!="yes"){
           sortedscores.splice(j, 0, ascores.at(i));
           sortednames.splice(j,0, scorenames.at(i));
@@ -220,18 +221,18 @@ function HighScores(){
     else{
      var ecompare=sortedscores.length-1;
       var added="no";
-      for (let k=0; k<sortedscores.length; k++){
+      var length=sortedscores.length;
+      for (let k=0; k<length; k++){
         if (ascores.at(i)>sortedscores.at(k)){
           sortedscores.splice(k, 0, ascores.at(i));
           sortednames.splice(k,0, scorenames.at(i));
           added="yes;
         }
-        if (k==ecompare && added="no"){
+        if (k==ecompare && added=="no"){
            sortedscores.push(ascores.at(i));
            sortednames.push(scorenames.at(i));
         }
-      }
-      
+      }  
     }
     }
   }
