@@ -116,13 +116,7 @@ var currentscore;
 
 
 
-
-
-
-function YouWin(){
-  document.getElementById('iwinner').innerHTML='<img src="https://i.ibb.co/bNmgWQx/You-WIN.png" height="800px" width="800px" ></img>';
-  finalscore=level-1;
-  setTimeout(() => {
+function Restart(){
     for (let i=101; i<111; i++){
       document.getElementById(i).style.top='-45px';
     }
@@ -138,7 +132,13 @@ function YouWin(){
   lost='yes';
    run='no';
    document.getElementById('iwinner').innerHTML='';
-  }, 5400);
+}
+
+
+function YouWin(){
+  document.getElementById('iwinner').innerHTML='<img src="https://i.ibb.co/bNmgWQx/You-WIN.png" height="800px" width="800px" ></img>';
+  finalscore=level-1;
+  SubmitScore();
 }
 
 function GameOver(){
@@ -6779,7 +6779,30 @@ function GetScore(){
   scorenames.push(value);
   ascores.push(finalscore);
    UpdateScores();
+  if (finalscore<3){
     Start();
+  }
+  else{
+  first=0;
+  wait=0;
+    setTimeout(() => {
+    for (let i=101; i<111; i++){
+      document.getElementById(i).style.top='-45px';
+    }
+    document.getElementById(100).innerHTML='';
+    document.getElementById('gover').innerHtml='';  
+    document.getElementById('Start').style.zIndex=12;
+  document.getElementById('Menu').style.zIndex=11;
+  iangries=[];
+  angries=[];
+  pastangries=[];
+  initangries=[];
+  level=1;
+  lost='yes';
+   run='no';
+   document.getElementById('iwinner').innerHTML='';
+  }, 5400);
+  }
   }
 
 function UpdateScores(){
