@@ -6752,6 +6752,7 @@ if (level==3){
 function Game() {
   document.getElementById('Start').style.zIndex=-1;
   document.getElementById('Menu').style.zIndex=-1;
+  document.getElementById("user").value="";
   Start();
 }
 function GetScore(){
