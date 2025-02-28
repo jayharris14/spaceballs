@@ -6,6 +6,7 @@ import React, {useState} from 'react';
 
 
 var igreen;
+var initiate=0;
 var wait=0;
 var winner=[];
 var clears=[];
@@ -277,6 +278,7 @@ function SubmitScore(){
 }
 
 function Start() {
+  initiate=1;
   if (level==1){
     currentscore=level-1;
   document.getElementById("iscorenum").innerHTML=currentscore;
@@ -6760,9 +6762,14 @@ function GetScore(){
      });
      document.getElementById("isubmit").style.zIndex=-3;
      document.getElementById("user").innerHTML="";
+   UpdateScores();
     Start();
   }
 
+function UpdateScores(){
+  wait=0;
+  App();
+}
  
 function App() {
   const [topscores, setTopscores]=useState([]);
@@ -6777,6 +6784,7 @@ function App() {
     HighScores();
    }
    console.log(top5);
+  if (initiate==0){
   return (
   <div className='Play'>
     <div className='Menu' id='Menu'>
@@ -6994,5 +7002,6 @@ function App() {
       </div>
     </div>  
   );
+}
 }
 export default App;
