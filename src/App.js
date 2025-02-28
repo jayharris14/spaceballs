@@ -6870,7 +6870,7 @@ function App() {
       })()};
            {(() => {
         ledger.push(<div className='instructions' id='instructs' style={{ position: 'absolute', zIndex: 5, left: 1000, top: 60, fontSize: 18, color: 'white', fontWeight: 'bold', fontFamily: 'monospace' }}> Instructions</div>);
-        ledger.push(<div className='greenmove' id='gm' style={{ position: 'absolute', zIndex: 5, left: 1000, top: 105, fontSize: 18, color: 'white', fontFamily: 'monospace' }}> Move <img nhsrc="https://i.ibb.co/SxzCsKG/green.png" style={{top: 4}} height="30px" width="30px" id="yellow"></img> into the Purple Zone</div>);
+        ledger.push(<div className='greenmove' id='gm' style={{ position: 'absolute', zIndex: 5, left: 1000, top: 105, fontSize: 18, color: 'white', fontFamily: 'monospace' }}> Move <img src="https://i.ibb.co/SxzCsKG/green.png" style={{top: 4}} height="30px" width="30px" id="yellow"></img> into the Purple Zone</div>);
         ledger.push(<div className='greenmovei' id='igm' style={{ position: 'absolute', zIndex: 5, left: 1050, top: 155, fontSize: 18, color: 'white', fontFamily: 'monospace' }}>* Moves up to 3 Spaces in any Single Direction</div>);
         ledger.push(<div className="redmove" id='rm' style={{ position: 'absolute', zIndex: 5, left: 1000, top: 245, fontSize: 18, color: 'white', fontFamily: 'monospace' }}>Avoid <img src="https://i.ibb.co/MZkwCVh/rb.png" height="36px" width="50px" style={{top: 4}}></img></div>)
         ledger.push(<div className="redmovei" id='irm' style={{ position: 'absolute', zIndex: 5, left: 1050, top: 285, fontSize: 18, color: 'white', fontFamily: 'monospace' }}> * Moves Up To 2 Spaces in any Single Direction</div>)
