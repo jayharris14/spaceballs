@@ -234,11 +234,13 @@ function HighScores(){
      var ecompare=sortedscores.length-1;
       var added="no";
       var length=sortedscores.length;
+      var end="no";
       for (let k=0; k<length; k++){
-        if (ascores.at(i)>sortedscores.at(k)){
+        if (ascores.at(i)>sortedscores.at(k) && end!="yes"){
           sortedscores.splice(k, 0, ascores.at(i));
           sortednames.splice(k,0, scorenames.at(i));
           added="yes";
+          end="yes";
         }
         if (k==ecompare && added=="no"){
            sortedscores.push(ascores.at(i));
