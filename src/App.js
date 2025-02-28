@@ -6,6 +6,7 @@ import React, {useState} from 'react';
 
 
 var igreen;
+var first=0;
 var initiate=0;
 var wait=0;
 var winner=[];
@@ -174,18 +175,28 @@ function PostScore(){
 
 function HighScores(){
   if (wait!=1){
+    if (first==0){
   ascores=[];
   sortedscores=[];
   sortednames=[];
   scorenames=[];
   names5=[];
   scores5=[];
+    }
+    if (first==1){
+       sortedscores=[];
+  sortednames=[];
+  names5=[];
+  scores5=[];
+    }
+    if (first==0){
   for (let i=0; i<top5.length; i++){
       if (top5.at(i).score!=null && top5.at(i).userName!=null){
          ascores.push(top5.at(i).score);
          scorenames.push(top5.at(i).userName);
       }
   }
+    }
   console.log(ascores);
   console.log(scorenames);
   max=ascores.at(0);
@@ -254,7 +265,8 @@ function HighScores(){
     document.getElementById("ihighscorenames").innerHTML=names5.at(0)+ "<br />" + names5.at(1)+ "<br />"+ names5.at(2)+ "<br />"+ names5.at(3)+ "<br />"+ names5.at(4);
     document.getElementById("ihighscores").style.zIndex=7;
     document.getElementById("ihighscorenums").innerHTML=scores5.at(0)+ "<br />" + scores5.at(1)+ "<br />"+ scores5.at(2)+ "<br />"+ scores5.at(3)+ "<br />"+ scores5.at(4);
-  wait=1;
+    first=1;
+    wait=1;
   }
 }
 
@@ -6762,13 +6774,15 @@ function GetScore(){
      });
      document.getElementById("isubmit").style.zIndex=-3;
      document.getElementById("user").innerHTML="";
+  scorenames.push(value);
+  ascores.push(finalscore);
    UpdateScores();
     Start();
   }
 
 function UpdateScores(){
   wait=0;
-  App();
+ HighScores();
 }
  
 function App() {
