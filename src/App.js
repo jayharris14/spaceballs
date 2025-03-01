@@ -6,7 +6,9 @@ import React, {useState} from 'react';
 
 
 var igreen;
+var ipiece;
 var first=0;
+var futuregreens=[];
 var initiate=0;
 var wait=0;
 var winner=[];
@@ -2281,15 +2283,15 @@ function BlueMove(slot){
           if (spacex >= 3) {
             angry = angry - 200;
             angry = angry + 3;
-            possibleangries.push(angry-3);
-            possibleangries.push(angry-2);
             possibleangries.push(angry-1);
+            possibleangries.push(angry-2);
+            possibleangries.push(angry-3);
           }
           else{
             angry=angry-200;
-            for (let r=0; r<spacex; r++){
-              possibleangries.push(angry+r);
-            }
+            possibleangries.push(angry-1);
+            possibleangries.push(angry-2);
+            possibleangries.push(angry-3);
             angry=angry+spacex;
         
           }
@@ -2340,12 +2342,13 @@ function BlueMove(slot){
               angry = angry - 3;
               possibleangries.push(angry+1);
               possibleangries.push(angry+2);
+              possibleangries.push(angry+3);
             }
             else{
-              angry=angry-200;
-              for (let r=0; r<spacex; r++){
-                possibleangries.push(angry-r);
-              }
+              angry=angry-200
+              possibleangries.push(angry+1);
+              possibleangries.push(angry+2);
+              possibleangries.push(angry+3);
               angry=angry-spacex;
             }
             for (let i=0; i<possibleangries.length; i++){
@@ -2387,6 +2390,86 @@ function BlueMove(slot){
               }
             }
           }
+          var x=pastid+200;
+          futuregreens=[];
+    for (let i=0; i<24; i++){
+      if (i<3){
+        x=x+1;
+        futuregreens.push(x);
+      }
+      else if(i<6){
+        if (i==3){
+          x=pastid+200;
+        }
+        x=x-1;
+        futuregreens.push(x);
+      }
+      else if(i<9){
+        if (i==6){
+          x=pastid+200;
+        }
+        x=x+9;
+        futuregreens.push(x);
+      }
+      else if (i<12){
+        if (i==9){
+          x=pastid+200;
+        }
+        x=x+10;
+        futuregreens.push(x);
+
+      }
+      else if(i<15){
+        if (i==12){
+          x=pastid+200;
+        }
+        x=x+8;
+        futuregreens.push(x);
+      }
+      else if(i<18){
+        if (i==15){
+          x=pastid+200;
+        }
+        x=x-8;
+        futuregreens.push(x);
+      }
+      else if(i<21){
+        if (i==18){
+          x=pastid+200;
+        }
+        x=x-9;
+        futuregreens.push(x);
+      }
+      else if(i<24){
+        if (i==21){
+          x=pastid+200;
+        }
+        x=x-10;
+        futuregreens.push(x);
+      }
+    }
+    for (let i=0; i<possibleangries.length; i++){
+      var too=possibleangries.at(i);
+      var tee="no";
+      if (possibleangries.at(i)<200){
+      for (let j=0; j<futuregreens.length; j++){
+             if (futuregreens.at(j)==too+200){
+              possibleangries.splice(i, 0, too+200);
+             }
+        }
+      }
+      else{
+        for (let j=0; j<futuregreens.length; j++){
+          if (too==futuregreens.at(j)){
+            tee="yes";
+          }
+          if (j==(futuregreens.length-1) && tee=="no"){
+            possibleangries.splice(i, 0, too-200);
+          }
+      }
+      }
+    }   
+    
           possiblemoves.push(possibleangries);
           console.log(iangries, possiblemoves);
           CheckPieces();
@@ -4157,6 +4240,85 @@ for (let piece=0; piece<ipieces; piece++){
       }
     }
     console.log(possibleangries);
+    var x=pastid+200;
+    futuregreens=[];
+    for (let i=0; i<24; i++){
+      if (i<3){
+        x=x+1;
+        futuregreens.push(x);
+      }
+      else if(i<6){
+        if (i==3){
+          x=pastid+200;
+        }
+        x=x-1;
+        futuregreens.push(x);
+      }
+      else if(i<9){
+        if (i==6){
+          x=pastid+200;
+        }
+        x=x+9;
+        futuregreens.push(x);
+      }
+      else if (i<12){
+        if (i==9){
+          x=pastid+200;
+        }
+        x=x+10;
+        futuregreens.push(x);
+
+      }
+      else if(i<15){
+        if (i==12){
+          x=pastid+200;
+        }
+        x=x+8;
+        futuregreens.push(x);
+      }
+      else if(i<18){
+        if (i==15){
+          x=pastid+200;
+        }
+        x=x-8;
+        futuregreens.push(x);
+      }
+      else if(i<21){
+        if (i==18){
+          x=pastid+200;
+        }
+        x=x-9;
+        futuregreens.push(x);
+      }
+      else if(i<24){
+        if (i==21){
+          x=pastid+200;
+        }
+        x=x-10;
+        futuregreens.push(x);
+      }
+    }
+    for (let i=0; i<possibleangries.length; i++){
+      var too=possibleangries.at(i);
+      var tee="no";
+      if (possibleangries.at(i)<200){
+      for (let j=0; j<futuregreens.length; j++){
+             if (futuregreens.at(j)==too+200){
+              possibleangries.splice(i, 0, too+200);
+             }
+        }
+      }
+      else{
+        for (let j=0; j<futuregreens.length; j++){
+          if (too==futuregreens.at(j)){
+            tee="yes";
+          }
+          if (j==(futuregreens.length-1) && tee=="no"){
+            possibleangries.splice(i, 0, too-200);
+          }
+      }
+      }
+    }   
     possiblemoves.push(possibleangries);
     }
     if (level==1){
@@ -4177,7 +4339,6 @@ setTimeout(() =>{
   console.log(possiblemoves);
   var check='null';
   var icheck='no';
-  
   for (let i=0; i<iangries.length; i++){
     icheck='no';
     check='null';
@@ -6193,6 +6354,9 @@ if ((pastid>=70 && pastid<=72) || (pastid>=79 && pastid<=81)){
       }
   }
 }
+  if (level==2){
+    document.getElementById(iangries[2]).innerHTML='<img src="https://i.ibb.co/Bqq79qC/pb-1.png" height="47px" width="62px" style="position:absolute; right: -9px; top: -3px;"></img>'
+  }
     if (zcount==3 || z2count==2 || pastid<=63){
       document.getElementById(100).className='finish';
     }
@@ -6638,10 +6802,9 @@ if (newid!=100){
     console.log('newlevel2', iangries);
     for (let i=0; i<2; i++){
       document.getElementById(iangries[i]).innerHTML='<img src="https://i.ibb.co/MZkwCVh/rb.png" height="47px" width="62px" style="position: absolute; right: -10px; top: -3px;"></img>'
-
    }
-    document.getElementById(iangries[2]).innerHTML='<img src="https://i.ibb.co/Bqq79qC/pb-1.png" height="47px" width="62px" style="position:absolute; right: -9px; top: -3px;"></img>'
-      document.getElementById(5).innerHTML = '<img src="https://i.ibb.co/SxzCsKG/green.png" height="35px" width="35px" id="yellow" style="position:absolute; right: 2.3px; top: 2px;"></img>'
+   document.getElementById(iangries[2]).innerHTML='<img src="https://i.ibb.co/Bqq79qC/pb-1.png" height="47px" width="62px" style="position:absolute; right: -9px; top: -3px;"></img>'
+   document.getElementById(5).innerHTML = '<img src="https://i.ibb.co/SxzCsKG/green.png" height="35px" width="35px" id="yellow" style="position:absolute; right: 2.3px; top: 2px;"></img>'
     AngryMove(-1);
     run='yes';
   }, 12500);
@@ -6763,7 +6926,7 @@ function GetScore(){
   fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/score/' +finalscore+'/'+ value, {
     method: 'POST',
     body: JSON.stringify({
-      // Add parameters here
+      // Add paframeters here
     }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
