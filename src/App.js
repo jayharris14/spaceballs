@@ -321,9 +321,11 @@ function Start() {
     initangries.push(initangry);
     initangries.push(initangry2);
      for (let i=0; i<2; i++){
-      for (let j=i+1; j<2; j++){
-        if (initangries[i]=initangries[j]){
+      for (let j=1; j<2; j++){
+        if (initangries[i]==initangries[j]){
+            while (initangries[i]==initangries[j]){
            initangries[j]=Math.floor(Math.random() * (90 - 37 + 1) + 37);
+            }
         }
       }
     }
@@ -6758,8 +6760,10 @@ if (newid!=100){
     var ang=iangries[0]; 
     for (let i=0; i<3; i++){
       for (let j=1; j<3; j++){
-        if (iangries[i]=iangries[j]){
+        if (iangries[i]==iangries[j]){
+           while( initangries[i]==initangries[j]){
            iangries[j]=Math.floor(Math.random() * (90 - 37 + 1) + 37);
+           }
         }
       }
     }
@@ -6824,8 +6828,10 @@ if (level==3){
     var ang=iangries[0]; 
     for (let i=0; i<4; i++){
       for (let j=1; j<4; j++){
-        if (iangries[i]=iangries[j]){
+        if (iangries[i]==iangries[j]){
+            while(initangries[i]==initangries[j]){
            iangries[j]=Math.floor(Math.random() * (90 - 37 + 1) + 37);
+            }
         }
       }
     }
