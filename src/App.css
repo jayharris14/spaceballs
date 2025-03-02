@@ -3,12 +3,14 @@
   background-color: black;
   height: 100vh;
  width: 100vw;
+    overflow: hidden;
 }
 .Play{
  background-color: black;
  height: 100vh;
  width: 100vw;
  position: absolute;
+ overflow: hidden;
 }
 
 .square{
