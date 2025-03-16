@@ -6,6 +6,7 @@ import React, {useState} from 'react';
 
 
 var igreen;
+var nomove;
 var ipiece;
 var first=0;
 var futuregreens=[];
@@ -6373,6 +6374,15 @@ if ((pastid>=70 && pastid<=72) || (pastid>=79 && pastid<=81)){
 
 function Nav(id) {
   newid = parseInt(id);
+  nomove=0;
+  if (newid==100){
+   for (let i=0; i<greens.length; i++){
+       if (greens.at(i)==100){
+           nomove=1;
+       }
+  }
+  }
+    if (nomove!=1){
   let manuever='no';
   try {
     if (document.getElementById(newid).title!='no'){
@@ -6914,6 +6924,7 @@ if (level==3){
       lost='no';
     }
   }
+}
 }
 }
   
