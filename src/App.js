@@ -6937,8 +6937,8 @@ function GetScore(){
   let value=document.getElementById("user").value;
   console.log(value);
   console.log(finalscore);
-  console.log('https://spaceballs.us-east-2.elasticbeanstalk.com/score/' +finalscore+'/'+ value);
-  fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/score/' +finalscore+'/'+ value, {
+  console.log('https://spaceblls-env.eba-jvct5ftn.us-east-2.elasticbeanstalk.com/score/' +finalscore+'/'+ value);
+  fetch('https://spaceblls-env.eba-jvct5ftn.us-east-2.elasticbeanstalk.com/score/' +finalscore+'/'+ value, {
     method: 'POST',
     body: JSON.stringify({
       // Add paframeters here
@@ -6979,7 +6979,7 @@ function App() {
   const [topscores, setTopscores]=useState([]);
   var scores=[];
   useEffect(() => {
-    fetch('https://spaceballs.us-east-2.elasticbeanstalk.com/scores')
+    fetch('https://spaceblls-env.eba-jvct5ftn.us-east-2.elasticbeanstalk.com/scores')
     .then((res) => res.json())
     .then((data)=>setTopscores(data));
 }, []);
